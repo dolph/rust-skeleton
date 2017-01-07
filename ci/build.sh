@@ -4,5 +4,11 @@ set -x
 
 DIR=`dirname $(readlink -f $0)`
 
+# Install dependencies.
+apt install curl
+
+# Install rust.
 curl https://sh.rustup.rs -sSf | sh
-rustc src/main.rs
+
+# Build the project.
+rustc $DIR/src/main.rs
