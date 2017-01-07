@@ -3,6 +3,7 @@ set -e
 set -x
 
 DIR=`dirname $(readlink -f $0)`
+cd $DIR/..
 
 # Install dependencies.
 apt-get update
@@ -12,7 +13,6 @@ apt-get install -y \
 ;
 
 # Build the project.
-cd $DIR
 cargo build
 
 # Smoke test the result.
