@@ -20,6 +20,6 @@ jobs:
                 repository: ubuntu
                 tag: "latest"
         inputs:
-        - name: dotfiles-repo
+        - name: repo
         run:
             path: repo/ci/build.sh
