@@ -9,4 +9,4 @@ apt-get update
 apt-get install -y rustc
 
 # Build the project.
-rustc $DIR/src/main.rs
+rustc $DIR/../src/main.rs
