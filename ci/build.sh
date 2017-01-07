@@ -9,7 +9,8 @@ apt-get update
 apt-get install -y rustc
 
 # Build the project.
-rustc $DIR/../src/main.rs
+cd $DIR
+cargo build
 
 # Smoke test the result.
-./main
+cargo run
