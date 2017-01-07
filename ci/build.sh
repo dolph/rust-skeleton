@@ -10,3 +10,6 @@ apt-get install -y rustc
 
 # Build the project.
 rustc $DIR/../src/main.rs
+
+# Smoke test the result.
+./main
