@@ -6,7 +6,10 @@ DIR=`dirname $(readlink -f $0)`
 
 # Install dependencies.
 apt-get update
-apt-get install -y rustc
+apt-get install -y \
+    rustc \
+    cargo \
+;
 
 # Build the project.
 cd $DIR
