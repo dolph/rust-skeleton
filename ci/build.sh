@@ -5,7 +5,8 @@ set -x
 DIR=`dirname $(readlink -f $0)`
 
 # Install dependencies.
-apt install curl
+apt-get update
+apt-get install -y curl
 
 # Install rust.
 curl https://sh.rustup.rs -sSf | sh
