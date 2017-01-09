@@ -8,7 +8,7 @@ fn main() {
 
     { // Limit the scope of borrows by the ap.refer() method.
         let mut parser = ArgumentParser::new();
-        parser.set_description("A skeleton for Rust-based projects.");
+        parser.set_description(env!("CARGO_PKG_DESCRIPTION"));
         parser.add_option(&["--version"],
             Print(format!("{} v{}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"))),
             "Show version information.");
