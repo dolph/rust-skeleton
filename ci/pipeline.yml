@@ -5,10 +5,16 @@ resources:
   source:
     uri: https://github.com/dolph/rust-skeleton.git
     branch: master
+- name: daily
+  type: time
+  source: {interval: 24h}
+
 
 jobs:
 - name: build
   plan:
+  - get: daily
+    trigger: true
   - get: repo
     trigger: true
   - task: build
