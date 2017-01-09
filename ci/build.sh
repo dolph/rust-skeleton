@@ -22,11 +22,11 @@ cargo --version
 # cargo install clippy
 # cargo clippy
 
-# Test the project.
-cargo test --verbose
-
 # Build the project.
 cargo build --release
+
+# Test the project.
+cargo test --verbose
 
 # Smoke test the result.
 cargo run
