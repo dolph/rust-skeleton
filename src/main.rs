@@ -10,7 +10,7 @@ fn main() {
         let mut parser = ArgumentParser::new();
         parser.set_description(env!("CARGO_PKG_DESCRIPTION"));
         parser.add_option(&["--version"],
-            Print(format!("{} v{}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"))),
+            Print(format!("{} {}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"))),
             "Show version information.");
         parser.refer(&mut verbose)
             .add_option(&["-v", "--verbose"], StoreTrue,
