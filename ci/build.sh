@@ -7,7 +7,10 @@ cd $DIR/..
 
 # Install dependencies.
 apt-get update
-apt-get install -y curl
+apt-get install -y \
+    curl \
+    cc \
+    ;
 
 # Install Rust.
 curl https://sh.rustup.rs -sSf > rustup-init.sh
