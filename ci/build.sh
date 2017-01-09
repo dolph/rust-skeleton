@@ -30,8 +30,8 @@ cargo build --release
 
 # Smoke test the result.
 cargo run
-./target/debug/skeleton
-./target/debug/skeleton --help
-./target/debug/skeleton --version
-./target/debug/skeleton --verbose
-./target/debug/skeleton --debug
+./target/release/skeleton
+./target/release/skeleton --help
+./target/release/skeleton --version
+./target/release/skeleton --verbose
+./target/release/skeleton --debug
