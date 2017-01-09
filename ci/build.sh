@@ -32,4 +32,6 @@ cargo build --release
 cargo run
 ./target/debug/skeleton
 ./target/debug/skeleton --help
+./target/debug/skeleton --version
 ./target/debug/skeleton --verbose
+./target/debug/skeleton --debug
