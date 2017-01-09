@@ -5,6 +5,10 @@ set -x
 DIR=`dirname $(readlink -f $0)`
 cd $DIR/..
 
+# Install dependencies.
+apt-get update
+apt-get install -y curl
+
 # Install Rust.
 curl https://sh.rustup.rs -sSf | sh
 export PATH="$PATH:~/.cargo/bin"
