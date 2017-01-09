@@ -4,6 +4,7 @@ use argparse::{ArgumentParser, StoreTrue, Print};
 
 fn main() {
     let mut verbose = false;
+    let mut debug = false;
 
     { // Limit the scope of borrows by the ap.refer() method.
         let mut parser = ArgumentParser::new();
@@ -14,6 +15,9 @@ fn main() {
         parser.refer(&mut verbose)
             .add_option(&["-v", "--verbose"], StoreTrue,
             "Enable verbose output.");
+        parser.refer(&mut debug)
+            .add_option(&["--debug"], StoreTrue,
+            "Enable debug mode.");
         parser.parse_args_or_exit();
     }
 
