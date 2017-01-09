@@ -23,7 +23,7 @@ cargo --version
 # cargo clippy
 
 # Test the project.
-cargo test
+cargo test --verbose
 
 # Build the project.
 cargo build --release
