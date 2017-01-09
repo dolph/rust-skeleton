@@ -16,6 +16,10 @@ apt-get install -y \
 rustc --version
 cargo --version
 
+# Run linter.
+cargo install clippy
+cargo clippy
+
 # Build the project.
 cargo build --release
 
