@@ -12,8 +12,9 @@ apt-get install -y \
     cargo \
 ;
 
-# Show rust version.
+# Show version information.
 rustc --version
+cargo --version
 
 # Build the project.
 cargo build
