@@ -9,7 +9,7 @@ cd $DIR/..
 apt-get update
 apt-get install -y \
     curl \
-    cc \
+    gcc \
     ;
 
 # Install Rust.
