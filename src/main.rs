@@ -7,7 +7,7 @@ fn main() {
 
     { // Limit the scope of borrows by the ap.refer() method.
         let mut parser = ArgumentParser::new();
-        parser.set_description("Hello, world.");
+        parser.set_description("A skeleton for Rust-based projects.");
         parser.refer(&mut verbose)
             .add_option(&["-v", "--verbose"], StoreTrue,
             "Enable verbose output.");

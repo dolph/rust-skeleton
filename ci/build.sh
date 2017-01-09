@@ -30,6 +30,6 @@ cargo build --release
 
 # Smoke test the result.
 cargo run
-./target/debug/hello_world
-./target/debug/hello_world --help
-./target/debug/hello_world --verbose
+./target/debug/skeleton
+./target/debug/skeleton --help
+./target/debug/skeleton --verbose

@@ -1,7 +1,11 @@
 [package]
-name = "hello_world"
+name = "skeleton"
 version = "0.0.1"
 authors = [ "Dolph Mathews <dolph.mathews@gmail.com>" ]
+description = "Skeleton for Rust-based projects."
+license = "Apache-2.0/MIT"
+repository = "https://github.com/dolph/rust-skeleton"
+documentation = "https://github.com/dolph/rust-skeleton"
 
 [dependencies]
 argparse="*"
