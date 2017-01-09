@@ -17,7 +17,7 @@ rustc --version
 cargo --version
 
 # Build the project.
-cargo build
+cargo build --release
 
 # Smoke test the result.
 cargo run
