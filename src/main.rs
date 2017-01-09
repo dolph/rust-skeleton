@@ -2,9 +2,16 @@ extern crate argparse;
 
 use argparse::{ArgumentParser, StoreTrue, Print};
 
+struct Options {
+    debug: bool,
+    verbose: bool,
+}
+
 fn main() {
-    let mut verbose = false;
-    let mut debug = false;
+    let mut options = Options {
+        debug: false,
+        verbose: false,
+    };
 
     { // Limit the scope of borrows by the ap.refer() method.
         let mut parser = ArgumentParser::new();
@@ -12,16 +19,16 @@ fn main() {
         parser.add_option(&["--version"],
             Print(format!("{} {}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"))),
             "Show version information.");
-        parser.refer(&mut verbose)
+        parser.refer(&mut options.verbose)
             .add_option(&["-v", "--verbose"], StoreTrue,
             "Enable verbose output.");
-        parser.refer(&mut debug)
+        parser.refer(&mut options.debug)
             .add_option(&["--debug"], StoreTrue,
             "Enable debug mode.");
         parser.parse_args_or_exit();
     }
 
-    if verbose {
+    if options.verbose {
         println!("Hello, world.");
     }
 }
