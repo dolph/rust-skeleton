@@ -1,6 +1,6 @@
 extern crate argparse;
 
-use argparse::{ArgumentParser, StoreTrue, Store};
+use argparse::{ArgumentParser, StoreTrue};
 
 fn main() {
     let mut verbose = false;
