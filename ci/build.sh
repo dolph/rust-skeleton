@@ -5,19 +5,6 @@ set -x
 DIR=`dirname $(readlink -f $0)`
 cd $DIR/..
 
-# Install dependencies.
-apt-get update
-apt-get install -y \
-    curl \
-    gcc \
-    ;
-
-# Install Rust.
-curl https://sh.rustup.rs -sSf > rustup-init.sh
-chmod +x rustup-init.sh
-sh rustup-init.sh -y
-export PATH="$PATH:~/.cargo/bin"
-
 # Show version information.
 rustc --version
 cargo --version
