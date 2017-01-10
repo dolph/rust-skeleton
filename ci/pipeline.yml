@@ -1,21 +1,21 @@
 ---
 resources:
+- name: image
+  type: docker-image
+  source:
+    repository: dolphm/ubuntu-latest-rust-nightly
 - name: repo
   type: git
   source:
     uri: https://github.com/dolph/rust-skeleton.git
     branch: master
-- name: image
-  type: docker-image
-  source:
-    repository: dolphm/ubuntu-latest-rust-nightly
 
 jobs:
 - name: build
   plan:
-  - get: repo
-    trigger: true
   - get: image
+    trigger: true
+  - get: repo
     trigger: true
   - task: build
     config:
