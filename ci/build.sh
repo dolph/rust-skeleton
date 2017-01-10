@@ -40,4 +40,3 @@ cargo run
 ./target/release/skeleton --help
 ./target/release/skeleton --version
 ./target/release/skeleton --verbose
-./target/release/skeleton --debug
