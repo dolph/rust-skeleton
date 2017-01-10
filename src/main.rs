@@ -1,17 +1,23 @@
+#[macro_use] extern crate log;
+extern crate env_logger;
+
 extern crate argparse;
 
 struct Options {
-    debug: bool,
     verbose: bool,
 }
 
 fn main() {
+    // Initialize logging.
+    env_logger::init().unwrap();
+
+    // Initialize options.
     let mut options = Options {
-        debug: false,
         verbose: false,
     };
 
-    { // Limit the scope of borrows by the ap.refer() method.
+    // Parse command line arguments.
+    {
         let mut parser = argparse::ArgumentParser::new();
         parser.set_description(env!("CARGO_PKG_DESCRIPTION"));
         parser.add_option(&["--version"],
@@ -24,15 +30,10 @@ fn main() {
         parser.refer(&mut options.verbose)
             .add_option(&["-v", "--verbose"], argparse::StoreTrue,
             "Enable verbose output.");
-        parser.refer(&mut options.debug)
-            .add_option(&["--debug"], argparse::StoreTrue,
-            "Enable debug mode.");
         parser.parse_args_or_exit();
     }
 
-    if options.verbose {
-        println!("Hello, world.");
-    }
+    info!("Hello, world.");
 }
 
 #[cfg(test)]
