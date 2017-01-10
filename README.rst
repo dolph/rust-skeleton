@@ -1,4 +1,4 @@
 rust-skeleton
 =============
 
-A skeleton for rust-lang projects.
+A skeleton for Rust-based projects.
