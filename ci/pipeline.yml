@@ -9,7 +9,6 @@ resources:
   type: time
   source: {interval: 24h}
 
-
 jobs:
 - name: build
   plan:
@@ -23,8 +22,7 @@ jobs:
       image_resource:
         type: docker-image
         source:
-          repository: ubuntu
-          tag: "latest"
+          repository: dolphm/ubuntu-latest-rust-nightly
       inputs:
       - name: repo
       run:
