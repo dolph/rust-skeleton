@@ -35,6 +35,7 @@ cargo build --release
 cargo test --verbose
 
 # Smoke test the result.
+export RUST_LOG=debug
 cargo run
 ./target/release/skeleton
 ./target/release/skeleton --help
