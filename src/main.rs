@@ -38,7 +38,7 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
-    use super::main;
+    use super::*;
 
     #[test]
     fn it_works() {
