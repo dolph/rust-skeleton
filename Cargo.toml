@@ -8,6 +8,6 @@ repository = "https://github.com/dolph/rust-skeleton"
 documentation = "https://github.com/dolph/rust-skeleton"
 
 [dependencies]
-argparse="*"
-env_logger="*"
-log="*"
+argparse = "*"
+env_logger = "*"
+log = "*"
