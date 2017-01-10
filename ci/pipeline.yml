@@ -5,16 +5,17 @@ resources:
   source:
     uri: https://github.com/dolph/rust-skeleton.git
     branch: master
-- name: daily
-  type: time
-  source: {interval: 24h}
+- name: image
+  type: docker-image
+  source:
+    repository: dolphm/ubuntu-latest-rust-nightly
 
 jobs:
 - name: build
   plan:
-  - get: daily
-    trigger: true
   - get: repo
+    trigger: true
+  - get: image
     trigger: true
   - task: build
     config:
