@@ -9,3 +9,5 @@ documentation = "https://github.com/dolph/rust-skeleton"
 
 [dependencies]
 argparse="*"
+env_logger="*"
+log="*"
