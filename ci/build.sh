@@ -5,9 +5,6 @@ set -x
 DIR=`dirname $(readlink -f $0)`
 cd $DIR/..
 
-# Set path to Rust.
-export PATH="$PATH:~/.cargo/bin"
-
 # Show version information.
 rustc --version
 cargo --version
