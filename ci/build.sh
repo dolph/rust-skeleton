@@ -14,9 +14,6 @@ cargo --version
 # cargo install clippy
 # cargo clippy
 
-# Build the project.
-cargo build --release
-
 # Test the project.
 cargo test --verbose
 

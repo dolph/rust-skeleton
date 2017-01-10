@@ -28,3 +28,19 @@ jobs:
       - name: repo
       run:
         path: repo/ci/build.sh
+- name: release
+  plan:
+  - get: repo
+    trigger: true
+    passed: [build]
+  - task: release
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: dolphm/ubuntu-latest-rust-nightly
+      inputs:
+      - name: repo
+      run:
+        path: repo/ci/release.sh
