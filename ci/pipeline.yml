@@ -12,12 +12,15 @@ resources:
 
 jobs:
 - name: build
+  serial: false
+  build_logs_to_retain: 5
   plan:
   - get: image
     trigger: true
   - get: repo
     trigger: true
   - task: build
+    attempts: 3
     config:
       platform: linux
       image_resource:
@@ -29,11 +32,14 @@ jobs:
       run:
         path: repo/ci/build.sh
 - name: release
+  serial: true
+  build_logs_to_retain: 5
   plan:
   - get: repo
     trigger: true
     passed: [build]
   - task: release
+    attempts: 3
     config:
       platform: linux
       image_resource:
