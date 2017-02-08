@@ -35,6 +35,9 @@ jobs:
   serial: true
   build_logs_to_retain: 5
   plan:
+  - get: image
+    trigger: true
+    passed: [build]
   - get: repo
     trigger: true
     passed: [build]
