@@ -8,11 +8,11 @@ cd $DIR/..
 rustc --version
 cargo --version
 
-# Run linter.
-# TODO(dolph): Clippy is unstable and doesn't actually build. Re-enable it when
-# it's stable: https://github.com/Manishearth/rust-clippy
-# cargo install clippy
-# cargo clippy
+# Build and deny warnings.
+cargo rustc -- -D warnings
+
+# Run clippy from nightly/stable and deny warnings.
+rustup run nightly cargo clippy -- -D warnings
 
 # Test the project.
 cargo test --verbose
